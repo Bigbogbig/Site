@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas Day - Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg">
+
+<div class="container">
+
+<header>
+<h2>Atlas Day</h2>
+<button onclick="logout()">Sair</button>
+</header>
+
+<section class="stats">
+<div class="card green">
+<h3 id="xp">0 XP</h3>
+<p>Nível: <span id="level">Iniciante</span></p>
+</div>
+<div class="card orange">
+<h3 id="money">R$ 0</h3>
+<p>Saldo</p>
+</div>
+</section>
+
+<section>
+<h3>Treinos</h3>
+<button onclick="addXP(50)">Treino Concluído (+50XP)</button>
+</section>
+
+<section>
+<h3>Estudos</h3>
+<button onclick="addXP(30)">Estudo Concluído (+30XP)</button>
+</section>
+
+<section>
+<h3>Rotina</h3>
+<button onclick="addXP(20)">Dia Produtivo (+20XP)</button>
+</section>
+
+<section>
+<h3>Financeiro</h3>
+<input type="number" id="valor" placeholder="Valor">
+<button onclick="addMoney()">Adicionar</button>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+<script>
+if(localStorage.getItem("auth") !== "Caio Sousa"){
+window.location.href = "index.html";
+}
+loadData();
+</script>
+
+</body>
+</html>
